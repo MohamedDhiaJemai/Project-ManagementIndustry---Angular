@@ -81,11 +81,11 @@ export class EtatAvancementComponent {
     }
   }
 
-  onEditConfirm(event1): void {
+  onCreateConfirm(event): void {
     if (window.confirm('Are you sure you want to Edit This Line')) {
-      event1.confirm.resolve();
+      event.confirm.resolve();
     } else {
-      event1.confirm.reject();
+      event.confirm.reject();
     }
   }
 
