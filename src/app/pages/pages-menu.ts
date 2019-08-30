@@ -179,7 +179,8 @@ export const MENU_ITEMS: NbMenuItem[] = [
     children: [
       {
         title: 'Documentation Techniques',
-        link: '/pages/tables/documentation-technique',
+        link: '/pages/tables/' +
+          '',
       },
     //   {
     //     title: 'Leaflet Maps',

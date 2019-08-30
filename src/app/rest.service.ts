@@ -17,7 +17,6 @@ const httpOptions = {
 export class RestService {
 
   constructor(private http: HttpClient) {}
-
   private extractData(res: Response) {
     let body = res;
     console.log(body);
@@ -223,14 +222,12 @@ export class RestService {
   // }
   //
 
-  deleteEtatAvancement (id): Observable<any> {
-    return this.http.delete<any>(endpoint + 'etatAvancements/' + id, httpOptions).pipe(
-      tap(_ => console.log(`deleted etatAvancements id=${id}`)),
-      catchError(this.handleError<any>('deleteEtatAvancement'))
-    );
+  deleteEtatAvancement(id:Number): Observable<any> {
+    console.log('Lien A SUPPRIMER : ' + endpoint + 'etatAvancements/' + id);
+    return this.http.delete(endpoint + 'etatAvancements/' + id).subscribe((ok)=>{console.log(ok)});
   }
 
-/////////////////////////////////////////////////     LOGISTIQUE ENTITIE    ////////////////////////////////////////////////////
+// ///////////////////////////////////////////////     LOGISTIQUE ENTITIE    ////////////////////////////////////////////////////
 
   // getLogistiques(): Observable<any> {
   //   return this.http.get(endpoint + 'logistiques').pipe(
